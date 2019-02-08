@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "_Layout";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+<style>
+    .navbar-div{
+        padding-top: 55px;
+    }
+    .nav-list li a{
+        text-decoration: none;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: white;
+        padding-right: 20px;
+    }
+</style>
+
+
+@* Navigation Bar Starts *@
+<div class="container">
+    <div class="navbar-div">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">ABC Technologies</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <ul class="navbar-nav nav-list">
+                    <li class="nav-item">
+                        <span> @Html.ActionLink("Home", "Index", "Home"); </span>
+                    </li>
+                    <li class="nav-item">
+                        <span> @Html.ActionLink("About Us", "About", "Home"); </span>
+                    </li>
+                    <li class="nav-item">
+                        <span> @Html.ActionLink("Contact Us", "Contact", "Home"); </span>
+                    </li>
+                    <li class="nav-item">
+                        <span> @Html.ActionLink("Category", "Category", "Home"); </span>
+                    </li>
+                    <li class="nav-item">
+                        <span> @Html.ActionLink("Category List", "ListCategory", "Home"); </span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+@* Navigation Bar Ends *@
+
+
+
+@RenderBody();
+
+
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark text-white pt-4">
+    <div class="container">
+        <!-- Footer Text -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae harum esse fugiat. Itaque, culpa?</p>
+
+                </div>
+                <!-- Grid column -->
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-6 mb-md-0 mb-3">
+
+                    <!-- Content -->
+                    <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id excepturi hic.</p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Text -->
+
+        <div class="container">
+
+            <!-- Social buttons -->
+            <ul class="list-unstyled list-inline text-center">
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-fb mx-1">
+                        <i class="fa fa-facebook"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-tw mx-1">
+                        <i class="fa fa-twitter"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-gplus mx-1">
+                        <i class="fa fa-google-plus"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-li mx-1">
+                        <i class="fa fa-linkedin"> </i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="btn-floating btn-dribbble mx-1">
+                        <i class="fa fa-dribbble"> </i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Social buttons -->
+
+        </div>
+        <!-- Footer Elements -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2018 Copyright:
+            <a href=""> ABC Technologies</a>
+        </div>
+        <!-- Copyright -->
+    </div>
+</footer>
+<!-- Footer -->
+
+
+@* Script Files *@
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-3.0.0.min.js"></script>

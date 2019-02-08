@@ -1,0 +1,32 @@
+﻿@model List<MvcWebApplication.tbl_Category>
+@{
+    ViewBag.Title = "ListCategory";
+}
+
+
+<script>
+    function deleteRecord() {
+        return confirm("Are you sure to DELETE this record?");
+    }
+</script>
+
+<h2 class="text-center" style="margin-top:20px;">Category List</h2>
+
+<div style="width:50%; margin:0 auto; margin-top:20px; margin-bottom:20px;">
+    <table class="table table-striped table-bordered table-hover text-center">
+        <tr>
+            <th>Category Name</th>
+            <th>Category Description</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.category_name</td>
+                <td>@item.category_description</td>
+                <td>@Html.ActionLink("Edit", "EditCategory", new { id = item.category_id }, htmlAttributes: new { @class = "btn btn-primary" }) | @Html.ActionLink("Delete", "DeleteCategory", new { id = item.category_id }, htmlAttributes: new { @class = "btn btn-danger", onclick = "return deleteRecord()" })</td>
+            </tr>
+        }
+    </table>
+</div>

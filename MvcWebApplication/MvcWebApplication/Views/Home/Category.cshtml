@@ -1,0 +1,99 @@
+﻿@model MvcWebApplication.tbl_Category
+
+@{
+    ViewBag.Title = "Category";
+}
+
+@* Traditional way to send request using 'name="input_field_name"' attribute *@
+
+@*<div class="container">
+<h2>Category</h2>
+    <form action="/Home/Category" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Category Name">
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Description:</label>
+            <input type="text" class="form-control" name="description" id="desc" placeholder="Enter Category Discription">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>*@
+
+
+
+@* ASP>NET MVC Format (NEW and WILL BE USED) *@
+@*<div class="container">*@
+    @*<h2>Create Category</h2>*@
+    @*@using (Html.BeginForm("Category", "Home", FormMethod.Post, new { @class = "" }))*@
+    @*{*@
+        @*<div class="form-group">*@
+            @*<label for="name">Name:</label>*@
+            @*@Html.Label("Category Name :", new { @class = "control-label", @for="CatName" })*@
+            
+            @*<input type="text" class="form-control" name="name" id="name" placeholder="Enter Category Name">*@
+            @*@Html.TextBox("name", null, new { @class = "form-control", @id = "CatName", @placeholder = "Enter Category Name" })*@
+        @*</div>*@
+        @*<div class="form-group">*@
+            @*<label for="name">Name:</label>*@
+            @*@Html.Label("Category Description :", new { @class = "control-label", @for="CatDesc" })*@
+
+            @*<input type="text" class="form-control" name="name" id="name" placeholder="Enter Category Name">*@
+            @*@Html.TextBox("description", null, new { @class = "form-control", @id = "CatDesc", @placeholder = "Enter Category Description" })*@
+        @*</div>*@
+    @*<button type="submit" class="btn btn-primary">Submit</button>*@
+    @*}*@
+@*</div>*@
+
+
+<div class="container">
+    <h2 class="text-center">Create Category</h2>
+    
+    @using (Html.BeginForm("Category", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.category_name, new { @class="col-md-12"})
+          
+                <div class="col-md-12">
+                    @Html.TextBoxFor(model => model.category_name, new { @class="form-control", @placeholder="Enter Category Name"})
+                </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.category_description, new { @class = "col-md-12" })
+
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(model => model.category_description, new { @class = "form-control", @placeholder = "Enter Category Discription" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col">
+        <div class="form-group">
+            <input class="btn btn-primary btn-block" type="submit" value="Add Category" />
+        </div>
+    </div>
+    }
+
+</div>
+
+
+<div class="container">
+    @*<table class="table table-bordered table-striped">
+        <tr>
+            <th>Category Name</th>
+            <th>Category Description</th>
+        </tr>
+        <tr>
+            <th>@ViewBag.CategoryName</th>
+            <th>@ViewBag.CategoryDesc</th>
+        </tr>
+    </table>*@
+</div>

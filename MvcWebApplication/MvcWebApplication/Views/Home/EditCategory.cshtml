@@ -1,0 +1,82 @@
+﻿@model MvcWebApplication.tbl_Category
+
+@{
+    ViewBag.Title = "EditCategory";
+}
+
+
+@* Auto Generated Form Starts *@
+
+@*<h2>Edit Category</h2>
+
+    @using (Html.BeginForm()) {
+
+
+
+        <fieldset>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.category_name)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.category_name)
+                @Html.ValidationMessageFor(model => model.category_name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.category_description)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.category_description)
+                @Html.ValidationMessageFor(model => model.category_description)
+            </div>
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>*@
+}
+@* Auto Generated Form Ends *@
+
+@* My Edit Form Starts *@
+
+
+<div class="container">
+    <h2 class="text-center">Edit Category</h2>
+
+
+    @using (Html.BeginForm("EditCategory", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+           @Html.HiddenFor(model => model.category_id)
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.category_name, new { @class = "col-md-12" })
+
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(model => model.category_name, new { @class = "form-control"})
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.category_description, new { @class = "col-md-12" })
+
+                    <div class="col-md-12">
+                        @Html.TextBoxFor(model => model.category_description, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <input class="btn btn-primary btn-block" type="submit" value="Save Changes" />
+            </div>
+        </div>
+    }
+
+</div>
+
+@* My Edit Forms Ends *@
+
